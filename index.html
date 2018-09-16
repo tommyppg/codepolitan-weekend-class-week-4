@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Latihan jQuery</title>
+</head>
+<body>
+	<button type="button" id="btn_klik">Klik Saya</button>
+	<button type="button" class="btn_klik_2">Klik Saya juga dong</button>
+	<button type="button" class="btn_klik_2">Klik Saya juga dong</button>
+
+	<h1 id="h1_klik">Klik saya!</h1>
+
+	<a href="#">Sebuah link</a>
+	<a href="#">Sebuah link lagi</a><br/><br/>
+
+	<button type="button" id="btn_hide">Tombol Hide</button>
+	<button type="button" id="btn_show">Tombol Show</button>
+	<h1 id="h1_hide_and_show">Sebuah Text</h1>
+
+	<select name="select_change" id="select_change">
+		<option value="laki_laki">Laki-laki</option>
+		<option value="perempuan">Perempuan</option>
+	</select>
+
+	<!-- LOAD JQUERY -->
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+	<!-- CUSTOM SCRIPT -->
+	<script type="text/javascript">
+		// penggunaan dasar jquery : $(selector).event(action);
+
+		//membuat event change
+		$("#select_change").change(function(){
+			var jeniskelamin = $('#select_change').val();
+			alert("Dropdown berhasil diubah menjadi "+jeniskelamin);
+		});
+
+		//membuat event mouseover (hover) lalu menghilangkan element dengan fadeout
+		$("#btn_hide").mouseover(function(){
+			$("#h1_hide_and_show").fadeOut();
+		});
+
+		//membuat event click lalu menghilangkan element dengan fadeout
+		$("#btn_show").click(function(){
+			$("#h1_hide_and_show").fadeIn();
+		});
+
+		$("#btn_klik").click(function(){
+			alert("Klik dengan ID berhasil");
+			console.log("Klik dengan ID berhasil!");
+		});
+
+		$(".btn_klik_2").click(function(){
+			alert("Klik dengan Class berhasil!");
+		});
+
+		$("#h1_klik").click(function(){
+			alert("H1 berhasil di klik!");
+		});
+
+		$("a").click(function(){
+			alert("Anchor berhasil di klik!");
+		});
+
+		// document.getElementById("btn_klik").onclick = function(){
+		// 	alert("Klik berhasil!");
+		// }
+
+		// document.getElementsByClassName("btn_klik_2").onclick = function(){
+		// 	alert("Klik berhasil!");
+		// }
+	</script>
+</body>
+</html>
